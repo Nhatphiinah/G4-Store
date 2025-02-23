@@ -1,31 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
-import java.util.Date;
-import java.util.List;
+import java.math.BigDecimal;
+import java.sql.Timestamp;
 
-/**
- *
- * @author ASUS
- */
 public class Order {
     private int orderID;
     private int userID;
-    private Date orderDate;
-    private double totalAmount;
-    private double discountAmount;
-    private double finalAmount;
+    private Timestamp orderDate;
+    private BigDecimal totalAmount;
+    private BigDecimal discountAmount;
+    private BigDecimal finalAmount;
     private String status;
     private String address;
     private String paymentMethod;
     private boolean isActive;
 
-    public Order() {}
-
-    public Order(int orderID, int userID, Date orderDate, double totalAmount, double discountAmount, double finalAmount, String status, String address, String paymentMethod, boolean isActive) {
+    public Order(int orderID, int userID, Timestamp orderDate, BigDecimal totalAmount, BigDecimal discountAmount, BigDecimal finalAmount, String status, String address, String paymentMethod, boolean isActive) {
         this.orderID = orderID;
         this.userID = userID;
         this.orderDate = orderDate;
@@ -37,86 +27,86 @@ public class Order {
         this.paymentMethod = paymentMethod;
         this.isActive = isActive;
     }
-    // Getters and Setters
 
+    // Getters
     public int getOrderID() {
         return orderID;
-    }
-
-    public void setOrderID(int orderID) {
-        this.orderID = orderID;
     }
 
     public int getUserID() {
         return userID;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
-    }
-
-    public Date getOrderDate() {
+    public Timestamp getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(Date orderDate) {
-        this.orderDate = orderDate;
-    }
-
-    public double getTotalAmount() {
+    public BigDecimal getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(double totalAmount) {
-        this.totalAmount = totalAmount;
-    }
-
-    public double getDiscountAmount() {
+    public BigDecimal getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(double discountAmount) {
-        this.discountAmount = discountAmount;
-    }
-
-    public double getFinalAmount() {
+    public BigDecimal getFinalAmount() {
         return finalAmount;
-    }
-
-    public void setFinalAmount(double finalAmount) {
-        this.finalAmount = finalAmount;
     }
 
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public String getAddress() {
         return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getPaymentMethod() {
         return paymentMethod;
     }
 
+    public boolean isActive() {
+        return isActive;
+    }
+
+    // Setters
+    public void setOrderID(int orderID) {
+        this.orderID = orderID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+    public void setOrderDate(Timestamp orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public void setTotalAmount(BigDecimal totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    public void setDiscountAmount(BigDecimal discountAmount) {
+        this.discountAmount = discountAmount;
+    }
+
+    public void setFinalAmount(BigDecimal finalAmount) {
+        this.finalAmount = finalAmount;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public void setPaymentMethod(String paymentMethod) {
         this.paymentMethod = paymentMethod;
     }
 
-    public boolean isIsActive() {
-        return isActive;
-    }
-
-    public void setIsActive(boolean isActive) {
+    public void setActive(boolean isActive) {
         this.isActive = isActive;
     }
-    
 }
