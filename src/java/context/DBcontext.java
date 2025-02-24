@@ -1,29 +1,29 @@
 package context;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DBcontext {
-
-    private final String jdbcURL = "jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=ShopDB_SWP;encrypt=false";
-    private final String jdbcUsername = "sa";
-    private final String jdbcPassword = "123";
+    private final String url = "jdbc:sqlserver://localhost:1433;databaseName=ShopDB_SWP;encrypt=true;trustServerCertificate=true";
+    private final String user = "sa";
+    private final String password = "123456";
 
     public Connection getConnection() {
-        Connection connection = null;
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
-        } catch (SQLException | ClassNotFoundException e) {
+            Connection conn = DriverManager.getConnection(url, user, password);
+            System.out.println("✅ Kết nối thành công đến database!");
+            return conn;
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println("❌ Không thể kết nối database!");
             e.printStackTrace();
+            return null;
         }
-        return connection;
     }
 
     public static void main(String[] args) {
-        try {
-            System.out.println(new DBcontext().getConnection());
-        } catch (Exception e) {
-        }
+        DBcontext db = new DBcontext();
+        db.getConnection(); // Chạy thử kết nối
     }
-
 }

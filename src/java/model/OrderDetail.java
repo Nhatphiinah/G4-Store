@@ -1,25 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
-/**
- *
- * @author ASUS
- */
+import java.math.BigDecimal;
+
 public class OrderDetail {
     private int orderDetailID;
     private int orderID;
     private int productID;
     private int variantID;
     private int quantity;
-    private double price;
-    private double subtotal;
+    private BigDecimal price;
+    private BigDecimal subtotal;
 
-    public OrderDetail() {}
-
-    public OrderDetail(int orderDetailID, int orderID, int productID, int variantID, int quantity, double price, double subtotal) {
+    public OrderDetail(int orderDetailID, int orderID, int productID, int variantID, int quantity, BigDecimal price, BigDecimal subtotal) {
         this.orderDetailID = orderDetailID;
         this.orderID = orderID;
         this.productID = productID;
@@ -28,61 +20,62 @@ public class OrderDetail {
         this.price = price;
         this.subtotal = subtotal;
     }
-    // Getters and Setters
 
+    // Getters
     public int getOrderDetailID() {
         return orderDetailID;
-    }
-
-    public void setOrderDetailID(int orderDetailID) {
-        this.orderDetailID = orderDetailID;
     }
 
     public int getOrderID() {
         return orderID;
     }
 
-    public void setOrderID(int orderID) {
-        this.orderID = orderID;
-    }
-
     public int getProductID() {
         return productID;
-    }
-
-    public void setProductID(int productID) {
-        this.productID = productID;
     }
 
     public int getVariantID() {
         return variantID;
     }
 
-    public void setVariantID(int variantID) {
-        this.variantID = variantID;
-    }
-
     public int getQuantity() {
         return quantity;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public BigDecimal getSubtotal() {
+        return subtotal;
+    }
+
+    // Setters
+    public void setOrderDetailID(int orderDetailID) {
+        this.orderDetailID = orderDetailID;
+    }
+
+    public void setOrderID(int orderID) {
+        this.orderID = orderID;
+    }
+
+    public void setProductID(int productID) {
+        this.productID = productID;
+    }
+
+    public void setVariantID(int variantID) {
+        this.variantID = variantID;
     }
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
-    public double getSubtotal() {
-        return subtotal;
-    }
-
-    public void setSubtotal(double subtotal) {
+    public void setSubtotal(BigDecimal subtotal) {
         this.subtotal = subtotal;
     }
 }
